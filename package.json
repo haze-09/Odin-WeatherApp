@@ -1,7 +1,7 @@
 {
-  "name": "template1",
+  "name": "odin-weather-app",
   "version": "1.0.0",
-  "description": "my template with a webpack config and a few plugins",
+  "description": "A simple weather app built to practice using APIs and asynchronous JavaScript.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

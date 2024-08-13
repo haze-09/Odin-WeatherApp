@@ -1,2 +1,2 @@
-# template1
-my template with a webpack config and a few plugins
+# Odin-WeatherApp
+A simple weather app built to practice using APIs and asynchronous JavaScript.
