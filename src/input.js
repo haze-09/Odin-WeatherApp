@@ -8,6 +8,7 @@ async function start() {
   let weatherData = await forecast(searchInput.value);
   domBuilder.data = weatherData;
   console.log(domBuilder.data);
+  domBuilder.build();
 }
 
 export default function attachlisteners() {
