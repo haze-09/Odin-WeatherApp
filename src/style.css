@@ -61,28 +61,40 @@ input::placeholder{
 }
 
 #today{
-    display: grid;
-    grid-template: repeat(2,1fr)/ repeat(2,1fr)
+    display: flex;
+    justify-content: space-between;
+    gap: 5vw;
+    /* grid-template: repeat(2,1fr)/ repeat(2,1fr) */
 }
 #title{
     font-size: clamp(4.375rem, 3.036rem + 3.571vw, 6.25rem);
     font-weight: 600;
-    /* align-self: center; */
+    line-height: 1;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
 
+#address{
+    opacity: 50%;
+    margin-bottom: 20px;
 }
 #place{
+    flex: 1;
     grid-row: span 2;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: flex-start;
+    background: rgb(33, 37, 42);
+    padding: 20px 30px;
+    border-radius: 25px;
 }
 
-#temp{
+.temp{
     grid-row: span 2;
     display: flex;
     justify-content: flex-end;
 }
-#temp>div{
+.temp>div{
     background: rgb(33, 37, 42);
     display: grid;
     height: 100%;
@@ -92,16 +104,58 @@ input::placeholder{
    
 }
 
-#temp>div>p{
+.temp>div>p{
     text-align: center;
     font-size: clamp(5rem, 4.286rem + 1.905vw, 6rem);
     font-weight: 600;
 }
 
-#temp>div>div{
+.temp>div>div{
 
     align-items: center;
     display: flex;
     justify-content: space-between;
     font-size: 1.5rem;
 }
+
+#forecast{
+    /* overflow-x: auto; */
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#forecast>div{
+    display: grid;
+    align-items: center
+}
+
+#forecast>div>p{
+    align-self: center ;
+    justify-self: center;
+}
+
+
+.forecastDiv{
+    flex: 3;
+    background: rgb(33, 37, 42);
+    /* height:  100%; */
+    width: 12.5vw;
+    aspect-ratio: 1/1;
+    padding: 20px;
+    border-radius: 25px;  
+    box-shadow: 0px 4px 45px  -28px rgb(33, 37, 42); 
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.forecastDiv>p{
+    font-size: 40px;
+    font-weight: 400;
+    line-height: 1;
+}
+
+

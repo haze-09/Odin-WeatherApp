@@ -7,7 +7,7 @@ async function forecast(location) {
       throw new Error(`Place: ${location} not found`);      
     }
     let weatherData = await response.json();
-    console.log(weatherData);
+    return weatherData;
   } catch (err) {
     console.error(err.message);
   }
