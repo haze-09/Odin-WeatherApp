@@ -1,4 +1,4 @@
-import { parseISO, format } from 'date-fns';
+import { parseISO, format } from "date-fns";
 
 const domBuilder = (function () {
   let data;
@@ -24,7 +24,7 @@ const domBuilder = (function () {
 
       let day = document.createElement("p");
       let date = parseISO(eachDay.datetime);
-      day.textContent = format(date, 'EEEE');
+      day.textContent = format(date, "EEEE");
       forecastDiv.appendChild(day);
 
       let forecastTemperature = document.createElement("p");
@@ -43,9 +43,21 @@ const domBuilder = (function () {
     temperature.textContent = parseInt(data.currentConditions.temp) + "°C";
     high.textContent = "H: " + parseInt(data.days[0].tempmax) + "°";
     low.textContent = "L: " + parseInt(data.days[0].tempmin) + "°";
-    
-    forecastContainer.innerHTML='';
+
+    forecastContainer.innerHTML = "";
     forecastDom(data.days.slice(1));
+  };
+
+  const error = () => {
+    title.textContent = `Couldn't find the place. :(`;
+    address.textContent = "Either it doesnt exist or..";
+    desc.textContent = "you suck at typing. Try again.";
+
+    temperature.textContent = "NA°C";
+    high.textContent = "H: NA";
+    low.textContent = "L: NA";
+
+    forecastContainer.innerHTML = "";
   };
 
   return {
@@ -56,6 +68,7 @@ const domBuilder = (function () {
       return data;
     },
     build,
+    error,
   };
 })();
 

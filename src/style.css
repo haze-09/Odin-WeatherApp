@@ -24,7 +24,6 @@ body{
 }
 
 input{
-    /* border: 2px solid whitesmoke; */
     border: none;
     color: rgba(245, 245, 245, 0.825);
     outline: none;
@@ -32,7 +31,16 @@ input{
     font-family: inherit;
     border-radius: 20px;
     padding: 10px 20px;
+    transition: 0.15s;
 }
+
+input:hover{
+    opacity: 50%;
+}
+input:focus{
+    opacity: 100%;
+}
+
 
 input::placeholder{
     color: rgba(245, 245, 245, 0.338);
@@ -44,6 +52,10 @@ input::placeholder{
     background: rgb(67, 76, 85);
     padding: 10px;
     border-radius: 50%;
+    transition: 0.15s;
+}
+#header>p:hover{
+    opacity: 50%;
 }
 
 #content{
@@ -158,4 +170,17 @@ input::placeholder{
     line-height: 1;
 }
 
+dialog{
+    top: 48%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background: rgb(33, 37, 42);
+    border: none;
+    border-radius: 15px;
+}
 
+dialog::backdrop{
+    backdrop-filter: blur(5px);
+    background-color: rgba(0, 0, 0, 0.2);
+}
